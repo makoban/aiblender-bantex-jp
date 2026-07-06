@@ -25,7 +25,7 @@ const shapes = {
     label: "10型",
     path: "assets/signage-10.glb",
     fallback: "assets/shape-10-render.png",
-    description: "1型と0型を台座に組む10型。表示体160cm、台座込み195cm、配線まわりまで含めたプレビュー。",
+    description: "1型と0型が離れて立つ10型。表示体160cm、台座込み195cm、配線まわりまで含めたプレビュー。",
     status: "10 shape 3D preview",
     rotationY: 0.15,
     scale: 1.74,
