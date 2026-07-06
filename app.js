@@ -25,19 +25,19 @@ const shapes = {
     label: "10型",
     path: "assets/signage-10.glb",
     fallback: "assets/shape-10-render.png",
-    description: "1と0を32cm x 16cmパネルで構成した全高1.6mの3Dプレビュー。",
+    description: "1型と0型を台座に組む10型。表示体160cm、台座込み195cm、配線まわりまで含めたプレビュー。",
     status: "10 shape 3D preview",
     rotationY: 0.15,
-    scale: 2.48,
+    scale: 1.74,
   },
   h: {
     label: "H型",
     path: "assets/signage-h.glb",
     fallback: "assets/shape-h-render.png",
-    description: "横5列、縦6段の32cm x 16cmパネルで構成した全高96cmの3Dプレビュー。",
+    description: "厚みのある箱型H。正面と側面に映像が回り込む立体什器プレビュー。",
     status: "H shape 3D preview",
     rotationY: 0.15,
-    scale: 2.40,
+    scale: 1.58,
   },
 };
 
