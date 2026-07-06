@@ -260,6 +260,8 @@ p {
 }
 
 .problem,
+.shapes,
+.motion,
 .flow,
 .case,
 .offer,
@@ -278,6 +280,7 @@ p {
 }
 
 .problem-grid,
+.shape-grid,
 .offer-list,
 .case-gallery {
   display: grid;
@@ -289,6 +292,7 @@ p {
 }
 
 .problem-grid article,
+.shape-card,
 .offer-list article {
   min-height: 100%;
   padding: 24px;
@@ -296,6 +300,74 @@ p {
   border-radius: 8px;
   background: var(--white);
   box-shadow: 0 12px 40px rgba(17, 21, 20, 0.05);
+}
+
+.shapes {
+  background: #edf4f1;
+}
+
+.shape-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.shape-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.shape-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #202725;
+}
+
+.shape-card-body {
+  padding: 0 24px 24px;
+}
+
+.shape-index {
+  margin-bottom: 10px;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.shape-specs {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  margin: 20px 0 0;
+  list-style: none;
+}
+
+.shape-specs li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 38px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #f8fbfa;
+}
+
+.shape-specs span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.shape-specs strong {
+  font-size: 13px;
+  font-weight: 900;
+  white-space: nowrap;
 }
 
 .num {
@@ -330,6 +402,15 @@ p {
   color: rgba(255, 255, 255, 0.76);
 }
 
+.shape-switch {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: min(520px, 100%);
+  margin: 10px 0 18px;
+}
+
+.shape-button,
 .view-button {
   min-width: 82px;
   min-height: 42px;
@@ -343,6 +424,46 @@ p {
   cursor: pointer;
 }
 
+.shape-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 10px 12px;
+}
+
+.shape-button span {
+  color: rgba(255, 255, 255, 0.54);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.shape-button.is-active span {
+  color: rgba(17, 21, 20, 0.62);
+}
+
+.model-detail {
+  width: min(520px, 100%);
+  padding: 18px 18px 16px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.model-detail h3 {
+  margin-bottom: 6px;
+  color: var(--white);
+}
+
+.model-detail p {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 14px;
+}
+
+.shape-button.is-active,
 .view-button.is-active {
   color: var(--ink);
   background: var(--lime);
@@ -389,6 +510,57 @@ p {
   background: rgba(17, 21, 20, 0.56);
   font-size: 12px;
   font-weight: 800;
+}
+
+.motion {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: 48px;
+  align-items: center;
+  background: var(--white);
+}
+
+.motion-copy p {
+  max-width: 620px;
+}
+
+.motion-panel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #0f1413;
+  box-shadow: var(--shadow);
+}
+
+.motion-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.motion-note {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.86);
+  background: rgba(17, 21, 20, 0.70);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.motion-note span,
+.motion-note strong {
+  white-space: nowrap;
 }
 
 .flow {
@@ -439,7 +611,7 @@ p {
 .case-gallery img {
   width: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
   background: #252b2a;
 }
 
@@ -564,11 +736,13 @@ p {
   }
 
   .problem-grid,
+  .shape-grid,
   .case-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .model-showcase,
+  .motion,
   .offer {
     grid-template-columns: 1fr;
   }
@@ -673,6 +847,8 @@ p {
   }
 
   .problem,
+  .shapes,
+  .motion,
   .flow,
   .case,
   .offer,
@@ -682,7 +858,9 @@ p {
   }
 
   .problem-grid,
+  .shape-grid,
   .case-gallery,
+  .motion,
   .flow-track,
   .offer-list,
   .offer-list article {
@@ -717,13 +895,42 @@ p {
     justify-content: center;
   }
 
+  .shape-switch {
+    width: 100%;
+    max-width: 352px;
+  }
+
+  .shape-button {
+    min-width: 0;
+    padding-right: 6px;
+    padding-left: 6px;
+  }
+
   .view-button {
     flex: 1;
     min-width: 0;
   }
 
+  .shape-card-body {
+    padding: 0 18px 20px;
+    text-align: center;
+  }
+
+  .shape-specs li {
+    justify-content: center;
+  }
+
   .case-gallery img {
     aspect-ratio: 16 / 10;
+  }
+
+  .motion-copy {
+    text-align: center;
+  }
+
+  .motion-note {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .contact {
